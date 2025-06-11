@@ -39,7 +39,7 @@ const Say = () => {
                Setcolor('blue')
             }}
          >
-            파란
+            파랑
          </button>
       </div>
    )

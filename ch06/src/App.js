@@ -10,8 +10,8 @@ function App() {
    // return <UseMemoEx1 />
    // return <UseMemoEx2 />
    // return <UseCallbackEx />
-   // return <UseRefEx />
-   return <ToggleEx />
+   return <UseRefEx />
+   // return <ToggleEx />
 }
 
 export default App
