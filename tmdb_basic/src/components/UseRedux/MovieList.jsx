@@ -29,7 +29,7 @@ state.movies = {
          <h1>인기영화 목록</h1>
          <ul>
             {movies.map((movie) => (
-               <Link key={movie.id} to={`/detail/${movie.id}`}> {/*링크 만들기 */}
+               <Link key={movie.id} to={`/detail/${movie.id}`}> {/*링크 만들기 무비아이디를 디테일파일에서 유스파라로 가져온다*/}
                   <li>{movie.title}</li>
                </Link>
             ))}

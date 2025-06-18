@@ -25,6 +25,7 @@ function TodoInsert({ onInsert }) {
    return (
       //onSubmit: submit버튼을 눌렀을 때 발생하는 이벤트
       <form className="TodoInsert" onSubmit={onSubmit}>
+         {/*form태그에  onSubmit 들어갈 수 있음*/}
          <input placeholder="할일을 입력하세요" value={value} onChange={onChange} />
          <button type="submmit">
             <IoMdAddCircleOutline />

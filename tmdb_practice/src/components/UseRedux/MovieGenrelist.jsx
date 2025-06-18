@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovies } from '../../features/movieSlice'
+import { fetchGenreList } from '../../features/movieSlice'
 import { Link } from 'react-router-dom'
 
-function MovieList() {
+function MovieGenrelist() {
    const dispatch = useDispatch()
-   const { movies, loading, error } = useSelector((state) => state.movies)
+   const { movieGenreList, loading, error } = useSelector((state) => state.movies)
 
    useEffect(() => {
-      dispatch(fetchMovies())
+      dispatch(fetchGenreList())
    }, [dispatch])
 
    if (loading) return <p>로딩중...</p>
@@ -16,11 +16,11 @@ function MovieList() {
 
    return (
       <div style={{ padding: '20px' }}>
-         <h1>현재 상영중인 영화</h1>
+         <h1>장르리스트</h1>
          <ul>
-            {movies.map((movie) => (
+            {movieGenreList.map((movie) => (
                <Link key={movie.id} to={`/detail/${movie.id}`}>
-                  <li>{movie.title}</li>
+                  <li>{movie.name}</li>
                </Link>
             ))}
          </ul>
@@ -28,4 +28,4 @@ function MovieList() {
    )
 }
 
-export default MovieList
+export default MovieGenrelist

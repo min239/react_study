@@ -16,7 +16,7 @@ export const fetchMovies = createAsyncThunk('movies/fetchMovies', async () => {
 
 //영화상세 정보 가져오기
 export const fetchMoviesDetails = createAsyncThunk('movies/fetchMoviesDetails', async (movieId) => {
-   const response = await getMoviesDetails(movieId)
+   const response = await getMoviesDetails(movieId) //getMoviesDetails호출,디테일 파일에서 fetchMoviesDetails(movieId)를 가져옴
    console.log(response)
    return response.data
 })
@@ -64,7 +64,7 @@ const movieSlice = createSlice({
 
          .addCase(fetchMoviesDetails.fulfilled, (state, action) => {
             state.loading = false
-            state.movieDetails = action.payload //action.payload: fetchMoviesDetails를 실행할 떄 리턴해주는 값을 가져온다
+            state.movieDetails = action.payload //action.payload: fetchMoviesDetails를 실행할 떄 리턴해주는 값( return response.data)을 가져온다
          })
 
          .addCase(fetchMoviesDetails.rejected, (state, action) => {
