@@ -30,7 +30,7 @@ function MovieCategory({ category }) {
       upcoming: 1,
    })
 
-   //categor가 바뀔떄(메뉴 누를 때) 또는 page가 바뀔 때(더 보기 버튼 누를 땔) 동작 더보기 버튼을 누르면 2를 가지고 와야하는데 dispatch(fetchMovies({ category, page: page[category] }))가  실행
+   //category가 바뀔떄(메뉴 누를 때) 또는 page가 바뀔 때(더 보기 버튼 누를 땔) 동작 더보기 버튼을 누르면 2를 가지고 와야하는데 dispatch(fetchMovies({ category, page: page[category] }))가  실행
    useEffect(() => {
       dispatch(fetchMovies({ category, page: page[category] })) //  json객체 {category:popular ,page:1} popular을 보내고 싶으면 여기를 바꾸고 slice에 추가, category를 props로 받아와서 다른 category 전달, { category: category, page: 1 } category생략,
       //page[category]-> json객체에서 값 가져오는 것
@@ -85,6 +85,7 @@ function MovieCategory({ category }) {
    }
 
    return (
+      //MovieCard카드에서 props를 받음
       <Wrap>
          <Menu />
          <Main $padding="30px 0">

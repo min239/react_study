@@ -2,11 +2,14 @@
 import { Wrap, Main } from '../styles/styledComponent'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
+import Banner from '../components/Banner'
 function Home() {
    return (
       <Wrap>
          <Menu />
-         <Main>영화상세페이지</Main>
+         <Main>
+            <Banner />
+         </Main>
          <Footer />
       </Wrap>
    )
